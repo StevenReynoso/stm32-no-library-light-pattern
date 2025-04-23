@@ -30,7 +30,7 @@ void rcc_gpio_enr(uint8_t bank_num) {
  * - Sets mode, output type, speed, and pull-up/down configuration
  */
 void gpio_init_pin(gpio_config_t cfg) {
-    struct gpio *gpio = GPIO(PINBANK(cfg.pin));              // Get GPIO port base address
+    struct gpio *gpio = GPIO(PINBANK(cfg.pin) + 'A');              // Get GPIO port base address
     uint8_t gpio_pin = PINNO(cfg.pin);                       // Extract pin number (0–15)
 
     rcc_gpio_enr(PINBANK(cfg.pin));                          // Enable clock for this GPIO bank

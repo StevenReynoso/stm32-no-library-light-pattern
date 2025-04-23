@@ -16,10 +16,10 @@ struct gpio {
 #define PINBANK(pin) ((pin) >> 8)                                            // extract bank number 0 for A, 1 for B.. from encoded pin
 
 typedef enum {                                                               // GPIO MODE options for MODER register
-    GPIO_MODE_INPUT  = 0x00,                                
-    GPIO_MODE_OUTPUT = 0x01,
-    GPIO_MODE_AF     = 0x02,
-    GPIO_MODE_ANALOG = 0x03
+    GPIO_MODE_INPUT       = 0x00,                                
+    GPIO_MODE_OUTPUT      = 0x01,
+    GPIO_MODE_AF          = 0x02,
+    GPIO_MODE_ANALOG      = 0x03
 } gpio_mode_t;
 
 typedef enum {                                                              // GPIO output typers for OTYPER register
