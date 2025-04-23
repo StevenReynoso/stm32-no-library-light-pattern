@@ -29,24 +29,26 @@
 
 ## STM32 Board Setup
 - if using a breadboard, setup the ground from the stm32 board (right side) to the bread board
-- setup (5) 220 ohm resistors, to ground and to 5 different Led light sources
-- place wiring from the Anode of LED to the pin, we will use these pins for our 5 light sources, from PA5 downwards
+- Wire five 220Ω resistors between the GND rail and the cathodes (short legs) of the LEDs.
+- Connect GPIO pins (e.g., PA5 to PA9) to the anodes (long legs) of the LEDs.
 
  ![image](https://github.com/user-attachments/assets/eee06bde-d86c-4b22-9fda-96945e4d76f5)
 
-- Lights will turn on from PA5 downwards as well, so keeping them inline is best
+- LEDs will illuminate in sequence starting from PA5 down to PA9, creating a clean light pattern.
+
+- If you wire the circuit as shown, no code changes or rewiring will be necessary — everything should run right out of the box.
 
 ## Project Setup
 
 - Build the Project: Ensure you have the ARM GCC toolchain installed. Then, run:
 
-- make
+- make (run in bash)
 
 - Flash to STM32 Board: Connect your STM32 board via ST-Link and flash the compiled binary:
 
-- st-flash write main.bin 0x8000000
+- make flash (run in bash)
 
-- Observe LED Pattern: Upon successful flashing, the LEDs connected to the specified GPIO pins should toggle sequentially, creating a light pattern.
+- After successful flashing, your LEDs on pins PA5–PA9 will toggle sequentially, producing a visual light pattern.
 
 ## Documentation
 
